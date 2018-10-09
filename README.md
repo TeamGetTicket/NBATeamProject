@@ -7,7 +7,7 @@ Time spent: **X** hours spent in total
 ## User Stories
 
 
-- [ ] User sees app icon in home screen and styled launch screen
+- [x] User sees app icon in home screen and styled launch screen
 - [ ] User can scroll through a list of Teams
 - [ ] User can get Player list after tap the Team
 - [ ] User can "Pull to refresh" the list
