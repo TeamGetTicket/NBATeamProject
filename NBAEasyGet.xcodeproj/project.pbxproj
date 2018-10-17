@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A4F438C8217582AB002BE138 /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F438C7217582AB002BE138 /* TeamViewController.swift */; };
+		A4F438CA21758BD5002BE138 /* TeamProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F438C921758BD5002BE138 /* TeamProfileViewController.swift */; };
+		A4F438CC2175910E002BE138 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F438CB2175910E002BE138 /* PlayerViewController.swift */; };
 		DA070C24215C72FD00D92DCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA070C23215C72FD00D92DCA /* AppDelegate.swift */; };
-		DA070C26215C72FD00D92DCA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA070C25215C72FD00D92DCA /* ViewController.swift */; };
 		DA070C29215C72FD00D92DCA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA070C27215C72FD00D92DCA /* Main.storyboard */; };
 		DA070C2B215C72FD00D92DCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA070C2A215C72FD00D92DCA /* Assets.xcassets */; };
 		DA070C2E215C72FD00D92DCA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA070C2C215C72FD00D92DCA /* LaunchScreen.storyboard */; };
@@ -34,9 +36,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A4F438C7217582AB002BE138 /* TeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
+		A4F438C921758BD5002BE138 /* TeamProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamProfileViewController.swift; sourceTree = "<group>"; };
+		A4F438CB2175910E002BE138 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		DA070C20215C72FD00D92DCA /* NBAEasyGet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NBAEasyGet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA070C23215C72FD00D92DCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DA070C25215C72FD00D92DCA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DA070C28215C72FD00D92DCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DA070C2A215C72FD00D92DCA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA070C2D215C72FD00D92DCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -97,8 +101,10 @@
 		DA070C22215C72FD00D92DCA /* NBAEasyGet */ = {
 			isa = PBXGroup;
 			children = (
+				A4F438C7217582AB002BE138 /* TeamViewController.swift */,
+				A4F438C921758BD5002BE138 /* TeamProfileViewController.swift */,
+				A4F438CB2175910E002BE138 /* PlayerViewController.swift */,
 				DA070C23215C72FD00D92DCA /* AppDelegate.swift */,
-				DA070C25215C72FD00D92DCA /* ViewController.swift */,
 				DA070C27215C72FD00D92DCA /* Main.storyboard */,
 				DA070C2A215C72FD00D92DCA /* Assets.xcassets */,
 				DA070C2C215C72FD00D92DCA /* LaunchScreen.storyboard */,
@@ -256,8 +262,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA070C26215C72FD00D92DCA /* ViewController.swift in Sources */,
 				DA070C24215C72FD00D92DCA /* AppDelegate.swift in Sources */,
+				A4F438CC2175910E002BE138 /* PlayerViewController.swift in Sources */,
+				A4F438CA21758BD5002BE138 /* TeamProfileViewController.swift in Sources */,
+				A4F438C8217582AB002BE138 /* TeamViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
