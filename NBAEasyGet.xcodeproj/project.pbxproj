@@ -16,6 +16,7 @@
 		DA070C2E215C72FD00D92DCA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA070C2C215C72FD00D92DCA /* LaunchScreen.storyboard */; };
 		DA070C39215C72FD00D92DCA /* NBAEasyGetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA070C38215C72FD00D92DCA /* NBAEasyGetTests.swift */; };
 		DA070C44215C72FE00D92DCA /* NBAEasyGetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA070C43215C72FE00D92DCA /* NBAEasyGetUITests.swift */; };
+		DA2D928E21781FD400B17319 /* TeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2D928D21781FD400B17319 /* TeamCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		DA070C3F215C72FE00D92DCA /* NBAEasyGetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NBAEasyGetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA070C43215C72FE00D92DCA /* NBAEasyGetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBAEasyGetUITests.swift; sourceTree = "<group>"; };
 		DA070C45215C72FE00D92DCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA2D928D21781FD400B17319 /* TeamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				A4F438C7217582AB002BE138 /* TeamViewController.swift */,
+				DA2D928D21781FD400B17319 /* TeamCell.swift */,
 				A4F438C921758BD5002BE138 /* TeamProfileViewController.swift */,
 				A4F438CB2175910E002BE138 /* PlayerViewController.swift */,
 				DA070C23215C72FD00D92DCA /* AppDelegate.swift */,
@@ -264,6 +267,7 @@
 			files = (
 				DA070C24215C72FD00D92DCA /* AppDelegate.swift in Sources */,
 				A4F438CC2175910E002BE138 /* PlayerViewController.swift in Sources */,
+				DA2D928E21781FD400B17319 /* TeamCell.swift in Sources */,
 				A4F438CA21758BD5002BE138 /* TeamProfileViewController.swift in Sources */,
 				A4F438C8217582AB002BE138 /* TeamViewController.swift in Sources */,
 			);
