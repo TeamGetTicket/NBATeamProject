@@ -52,6 +52,12 @@ class TeamViewController: UIViewController, UITableViewDataSource {
         cell.teamVenueLabel.text = venueName
         cell.teamAddressLabel.text = venueAddress
         
+        var teamImageIndex:String = "team"
+        let indexString:String = String(indexPath.row)
+        teamImageIndex += indexString
+        let teamImage = UIImage(named: teamImageIndex)
+        cell.teamImage.image = teamImage
+        
         
         
         

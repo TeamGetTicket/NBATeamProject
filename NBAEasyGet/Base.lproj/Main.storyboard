@@ -28,9 +28,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="158.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I5q-ed-lgk">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="team25" translatesAutoresizingMaskIntoConstraints="NO" id="I5q-ed-lgk">
                                                     <rect key="frame" x="15" y="11" width="90" height="100"/>
-                                                    <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="7tG-bs-aZa"/>
                                                         <constraint firstAttribute="width" constant="90" id="taf-wn-r9W"/>
@@ -101,6 +101,7 @@
                                         <connections>
                                             <outlet property="teamAddressLabel" destination="SMX-x2-1DU" id="bgu-aq-qwR"/>
                                             <outlet property="teamAliasLabel" destination="Z7B-lD-1N4" id="zEb-8l-x4S"/>
+                                            <outlet property="teamImage" destination="I5q-ed-lgk" id="vkK-ox-2T5"/>
                                             <outlet property="teamNameLabel" destination="daM-Y7-Cyy" id="ldU-kV-I5h"/>
                                             <outlet property="teamVenueLabel" destination="1I2-sQ-BgI" id="Zni-JR-gps"/>
                                             <segue destination="zpe-hS-SkN" kind="show" id="sYF-5r-Yvo"/>
@@ -531,4 +532,7 @@
             <point key="canvasLocation" x="191" y="133"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="team25" width="512" height="512"/>
+    </resources>
 </document>
