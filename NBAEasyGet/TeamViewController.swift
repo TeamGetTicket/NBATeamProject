@@ -59,11 +59,6 @@ class TeamViewController: UIViewController, UITableViewDataSource {
         cell.teamImage.image = teamImage
         
         
-        
-        
-        
-        
-        
         return cell
     }
     
@@ -87,7 +82,7 @@ class TeamViewController: UIViewController, UITableViewDataSource {
                 let westernTeams1 = western[0]["teams"] as! [[String:Any]]
                 let westernTeams2 = western[1]["teams"] as! [[String:Any]]
                 let westernTeams3 = western[2]["teams"] as! [[String:Any]]
-                print(westernTeams1)
+                
                 for team in easternTeams1{
                     self.teams.append(team)
                 }
