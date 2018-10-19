@@ -18,6 +18,8 @@ class TeamCell: UITableViewCell {
     @IBOutlet weak var teamVenueLabel: UILabel!
     @IBOutlet weak var teamAddressLabel: UILabel!
     
+    @IBOutlet weak var teamImage: UIImageView!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
