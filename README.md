@@ -6,11 +6,11 @@ Time spent: **X** hours spent in total
 
 ## User Stories
 
-
-- [ ] User sees app icon in home screen and styled launch screen
-- [ ] User can scroll through a list of Teams
+- [x] User can see the app icon
+- [x] User can see the launch screen with picture
+- [x] User can scroll through a list of Teams
+- [x] User can see the team icon for each team
 - [ ] User can get Player list after tap the Team
-- [ ] User can "Pull to refresh" the list
 - [ ] User can get Detail Player info after tap on PlayerCell in Player List
 - [ ] User sees a loading state while waiting for the list to load 
 - [ ] User sees an alert when there's a networking error
@@ -18,25 +18,25 @@ Time spent: **X** hours spent in total
 
 The following stretch user stories are implemented:
 
--[ ] User can search for a Team or Players
+- [ ] User can search for a Team or Players
 
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
+1. What other feature we can develop in this app?
 2.
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/TeamGetTicket/NBATeamProject/blob/master/src/NBAEasyGetDemo_02.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+It took me a while to figure out how to get the json data from this api format.
 
 ## Credits
 
