@@ -18,7 +18,9 @@ class TeamProfileViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
-        tableView.rowHeight = 120
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 120
+        
         
         
         if let team = team{
@@ -51,7 +53,7 @@ class TeamProfileViewController: UIViewController, UITableViewDataSource {
         
         let player = players[indexPath.row]
         let name = player["full_name"] as! String
-        let number = player["jersey_number"] ?? "0"
+        let number = player["jersey_number"] ?? ""
         let position = player["primary_position"] as! String
         let IncheHeight = player["height"] as! Int
         let weight = String(player["weight"] as! Int)
@@ -63,11 +65,11 @@ class TeamProfileViewController: UIViewController, UITableViewDataSource {
         let image = UIImage(named: playerNumberImageString as! String)
         cell.playerImage.image = image
         
-        cell.heightLabel.text = "\(feet) ft \(remainder) in"
+        cell.heightLabel.text = " | \(feet) ft \(remainder) in"
         cell.nameLabel.text = name
         cell.numberLabel.text = "#\(number)"
         cell.positionLabel.text = position
-        cell.weightLabel.text = "\(weight) lbs"
+        cell.weightLabel.text = "| \(weight) lbs"
         
         return cell
     }
