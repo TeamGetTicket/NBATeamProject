@@ -82,7 +82,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PlayerCell" rowHeight="84" id="6V5-74-CJf">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PlayerCell" rowHeight="84" id="6V5-74-CJf" customClass="PlayerCell" customModule="NBAEasyGet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6V5-74-CJf" id="dSD-ws-F53">
@@ -132,6 +132,12 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="heightLabel" destination="JBB-7C-sVW" id="oSq-fH-4re"/>
+                                            <outlet property="nameLabel" destination="7pO-8y-a0d" id="Y4q-mb-8CV"/>
+                                            <outlet property="numberLabel" destination="v9W-ry-8Yh" id="LYS-7s-Ykm"/>
+                                            <outlet property="playerImage" destination="rHH-nI-50i" id="Aq3-mQ-gIO"/>
+                                            <outlet property="positionLabel" destination="pir-vz-oAW" id="vgn-Ey-7qy"/>
+                                            <outlet property="weightLabel" destination="K53-yn-0Qm" id="u0z-3S-52M"/>
                                             <segue destination="ExJ-kW-vWr" kind="show" id="HHl-uZ-lqh"/>
                                         </connections>
                                     </tableViewCell>
@@ -148,7 +154,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mWn-IN-FQp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2015" y="133"/>
+            <point key="canvasLocation" x="2013.5999999999999" y="132.68365817091455"/>
         </scene>
         <!--Player View Controller-->
         <scene sceneID="t5U-Nw-5HY">
