@@ -12,29 +12,33 @@ class TeamProfileViewController: UIViewController, UITableViewDataSource {
 
     
     @IBOutlet weak var tableView: UITableView!
-    var teamID = "583ec825-fb46-11e1-82cb-f4ce4684ea4c"
     var players: [NSDictionary] = []
+    var team: [String:Any]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
-        tableView.rowHeight = 80
+        tableView.rowHeight = 120
         
-        let url = URL(string: "http://api.sportradar.us/nba/trial/v5/en/teams/\(teamID)/profile.json?api_key=3ye63ptxw6j7xtfrwaf3jstb")!
-        let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
-        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
-        let task = session.dataTask(with: request) { (data, response, error) in
-            if let error = error {
-                print(error.localizedDescription)
-            } else if let data = data {
-                let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
-                let players = dataDictionary["players"] as! [NSDictionary]
-                self.players = players
-                self.tableView.reloadData()
+        
+        if let team = team{
+            self.navigationItem.title = team["name"] as? String
+            let teamID = team["id"] as! String
+            let url = URL(string: "http://api.sportradar.us/nba/trial/v5/en/teams/\(teamID)/profile.json?api_key=3ye63ptxw6j7xtfrwaf3jstb")!
+            let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
+            let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
+            let task = session.dataTask(with: request) { (data, response, error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                } else if let data = data {
+                    let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+                    let players = dataDictionary["players"] as! [NSDictionary]
+                    self.players = players
+                    self.tableView.reloadData()
+                }
             }
+            task.resume()
         }
-        task.resume()
-        
     }
     
     
@@ -47,7 +51,7 @@ class TeamProfileViewController: UIViewController, UITableViewDataSource {
         
         let player = players[indexPath.row]
         let name = player["full_name"] as! String
-        let number = player["jersey_number"] as! String
+        let number = player["jersey_number"] ?? "0"
         let position = player["primary_position"] as! String
         let IncheHeight = player["height"] as! Int
         let weight = String(player["weight"] as! Int)
@@ -55,7 +59,9 @@ class TeamProfileViewController: UIViewController, UITableViewDataSource {
         let feet = IncheHeight/12
         let remainder = feet%12
         
-        
+        let playerNumberImageString = number;
+        let image = UIImage(named: playerNumberImageString as! String)
+        cell.playerImage.image = image
         
         cell.heightLabel.text = "\(feet) ft \(remainder) in"
         cell.nameLabel.text = name
