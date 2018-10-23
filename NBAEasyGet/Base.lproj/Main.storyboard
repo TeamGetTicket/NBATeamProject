@@ -42,8 +42,8 @@
                                                     <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oracle Arena" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1I2-sQ-BgI">
-                                                    <rect key="frame" x="190" y="40" width="99.5" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Oracle Arena" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1I2-sQ-BgI">
+                                                    <rect key="frame" x="190" y="40" width="177" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -64,7 +64,7 @@
                                                     <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venue:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DYs-4q-Ect">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Venue:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DYs-4q-Ect">
                                                     <rect key="frame" x="113" y="40" width="53" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -87,7 +87,7 @@
                                                 <constraint firstItem="DYs-4q-Ect" firstAttribute="leading" secondItem="I5q-ed-lgk" secondAttribute="trailing" constant="8" id="JZG-rY-XQh"/>
                                                 <constraint firstItem="1kn-fe-NTS" firstAttribute="leading" secondItem="I5q-ed-lgk" secondAttribute="trailing" constant="8" id="ULy-xK-85c"/>
                                                 <constraint firstAttribute="trailing" secondItem="Z7B-lD-1N4" secondAttribute="trailing" constant="8" id="WjB-Oz-SOM"/>
-                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="1I2-sQ-BgI" secondAttribute="trailing" id="ZBY-Qw-EaW"/>
+                                                <constraint firstAttribute="trailing" secondItem="1I2-sQ-BgI" secondAttribute="trailing" constant="8" id="Wri-9d-WHJ"/>
                                                 <constraint firstItem="I5q-ed-lgk" firstAttribute="top" secondItem="cT3-P6-Uo0" secondAttribute="topMargin" id="dHe-Wg-pNb"/>
                                                 <constraint firstItem="SMX-x2-1DU" firstAttribute="leading" secondItem="1kn-fe-NTS" secondAttribute="trailing" constant="9" id="gp6-pI-UcB"/>
                                                 <constraint firstItem="daM-Y7-Cyy" firstAttribute="top" secondItem="cT3-P6-Uo0" secondAttribute="topMargin" id="h8M-ZQ-php"/>
