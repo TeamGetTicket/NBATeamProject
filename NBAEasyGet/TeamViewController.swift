@@ -14,7 +14,6 @@ class TeamViewController: UIViewController, UITableViewDataSource {
     
     var teams:[[String:Any]] = []
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -105,7 +104,16 @@ class TeamViewController: UIViewController, UITableViewDataSource {
             }
         }
         task.resume()
-        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! UITableViewCell
+        if let indexPath = tableView.indexPath(for: cell){
+            let team = teams[indexPath.row]
+            let teamProfileViewController = segue.destination as! TeamProfileViewController
+            teamProfileViewController.team = team
+            
+        }
     }
 
 }
