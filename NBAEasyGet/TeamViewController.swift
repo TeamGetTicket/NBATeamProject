@@ -14,6 +14,8 @@ class TeamViewController: UIViewController, UITableViewDataSource {
     
     var teams:[[String:Any]] = []
     
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -51,7 +53,9 @@ class TeamViewController: UIViewController, UITableViewDataSource {
         cell.teamVenueLabel.text = venueName
         cell.teamAddressLabel.text = venueAddress
         
+
         let teamImage = UIImage(named: teamName)
+
         cell.teamImage.image = teamImage
         
         
@@ -104,6 +108,7 @@ class TeamViewController: UIViewController, UITableViewDataSource {
             }
         }
         task.resume()
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -114,6 +119,7 @@ class TeamViewController: UIViewController, UITableViewDataSource {
             teamProfileViewController.team = team
             
         }
+
     }
 
 }
