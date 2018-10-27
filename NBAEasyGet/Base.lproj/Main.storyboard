@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ySe-LO-DPd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fAO-hR-jbu">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WKr-uh-2AX">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TeamCell" rowHeight="159" id="57h-CY-nhZ" customClass="TeamCell" customModule="NBAEasyGet" customModuleProvider="target">
@@ -126,7 +126,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="132.68365817091455"/>
+            <point key="canvasLocation" x="2015.2" y="132.68365817091455"/>
         </scene>
         <!--Warriors-->
         <scene sceneID="C1R-2k-LFh">
@@ -226,7 +226,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mWn-IN-FQp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2013.5999999999999" y="132.68365817091455"/>
+            <point key="canvasLocation" x="2952.8000000000002" y="132.68365817091455"/>
         </scene>
         <!--Player View Controller-->
         <scene sceneID="t5U-Nw-5HY">
@@ -237,7 +237,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gy9-cB-OcD">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="730"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="681"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cf4-AN-VjV">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -530,12 +530,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="djW-fq-weG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3025" y="161"/>
+            <point key="canvasLocation" x="3964" y="160.11994002998503"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Home-->
         <scene sceneID="rac-ud-fNe">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ySe-LO-DPd" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="Basketball" id="BBI-Qp-Lug"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UrN-mt-gLD">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -548,10 +549,65 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zgJ-zD-OUr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="191" y="133"/>
+            <point key="canvasLocation" x="1128.8" y="132.68365817091455"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="a8q-YZ-lMd">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="fAO-hR-jbu" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QJ4-t6-FrJ">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ySe-LO-DPd" kind="relationship" relationship="viewControllers" id="11M-xY-IbD"/>
+                        <segue destination="r6R-Yg-t3U" kind="relationship" relationship="viewControllers" id="rhV-oH-Mlz"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="koW-2V-PaF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="189.59999999999999" y="132.68365817091455"/>
+        </scene>
+        <!--Schedule View Controller-->
+        <scene sceneID="khw-Ib-U0Y">
+            <objects>
+                <viewController id="4qi-1U-OqF" customClass="ScheduleViewController" customModule="NBAEasyGet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bVU-Rf-vCQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="buh-K2-Ao0"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xPF-Sf-rWi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MfH-Fk-dpq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1128.8" y="931.48425787106453"/>
+        </scene>
+        <!--Schedule-->
+        <scene sceneID="9c0-qm-Qy4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="r6R-Yg-t3U" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Schedule" image="Calender" selectedImage="Calender" id="QNr-I5-ENV"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ypg-co-ow8">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4qi-1U-OqF" kind="relationship" relationship="rootViewController" id="BsG-nU-wKs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fav-3X-6Ma" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="189.59999999999999" y="931.48425787106453"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Basketball" width="22.5" height="22.5"/>
+        <image name="Calender" width="22.5" height="22.5"/>
         <image name="team25" width="512" height="512"/>
     </resources>
 </document>
