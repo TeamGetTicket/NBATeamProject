@@ -21,8 +21,6 @@ class TeamProfileViewController: UIViewController, UITableViewDataSource {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 120
         
-        
-        
         if let team = team{
             self.navigationItem.title = team["name"] as? String
             let teamID = team["id"] as! String
@@ -61,8 +59,8 @@ class TeamProfileViewController: UIViewController, UITableViewDataSource {
         let feet = IncheHeight/12
         let remainder = feet%12
         
-        let playerNumberImageString = number;
-        let image = UIImage(named: playerNumberImageString as! String)
+        let playerImageString = name;
+        let image = UIImage(named: playerImageString)
         cell.playerImage.image = image
         
         cell.heightLabel.text = " | \(feet) ft \(remainder) in"
