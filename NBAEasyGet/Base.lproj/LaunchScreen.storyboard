@@ -17,6 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NBAEasyGet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GCJ-Dh-NHN">
                                 <rect key="frame" x="35.5" y="40" width="304" height="58"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="48"/>
@@ -25,14 +26,17 @@
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NBA LOGO" translatesAutoresizingMaskIntoConstraints="NO" id="dme-wW-fW1">
                                 <rect key="frame" x="-68.5" y="118" width="512" height="512"/>
+
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+
                             <constraint firstItem="GCJ-Dh-NHN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="CwT-J5-t0z"/>
                             <constraint firstItem="GCJ-Dh-NHN" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="oeB-hZ-1GL"/>
                             <constraint firstItem="dme-wW-fW1" firstAttribute="top" secondItem="GCJ-Dh-NHN" secondAttribute="bottom" constant="20" id="orm-Pw-sek"/>
                             <constraint firstItem="dme-wW-fW1" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="piE-C6-6ZV"/>
+
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
