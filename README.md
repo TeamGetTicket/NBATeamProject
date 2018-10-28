@@ -10,16 +10,15 @@ Time spent: **X** hours spent in total
 - [x] User can see the launch screen with picture
 - [x] User can scroll through a list of Teams
 - [x] User can see the team icon for each team
-- [ ] User can get Player list after tap the Team
-- [ ] User can get Detail Player info after tap on PlayerCell in Player List
-- [ ] User sees a loading state while waiting for the list to load 
+- [x] User can get Player list after tap the Team
+- [x] User can get Detail Player info after tap on PlayerCell in Player List
 - [ ] User sees an alert when there's a networking error
-
 
 The following stretch user stories are implemented:
 
 - [ ] User can search for a Team or Players
-
+- [ ] User can check the current season game schedule
+- [ ] User can access to a map that indicate every team's venue location
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
@@ -30,7 +29,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://github.com/TeamGetTicket/NBATeamProject/blob/master/src/NBAEasyGetDemo_02.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/TeamGetTicket/NBATeamProject/blob/master/src/NBAEasyGetDemo_03.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
@@ -42,6 +41,7 @@ It took me a while to figure out how to get the json data from this api format.
 
 List an 3rd party libraries, icons, graphics, or other assets you used in your app.
 
+- [Sportradar](https://sportradar.us/) - Live Basketball API
 
 
 ## License
