@@ -51,10 +51,12 @@ class PlayerViewController: UIViewController {
 }
 
     func fectchPlayers(){
+
         //print(playerID)
     let urlString = "http://api.sportradar.us/nba/trial/v5/en/players/" + self.playerID as! String + "/profile.json?api_key=d8nn89vtd3qe7jkwvzftfjqa"
         //print(urlString)
         let url = URL(string: urlString)!
+
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
         let task = session.dataTask(with: request) { (data, response, error) in
