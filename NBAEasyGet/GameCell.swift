@@ -9,7 +9,14 @@
 import UIKit
 
 class GameCell: UITableViewCell {
-
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var homeImage: UIImageView!
+    @IBOutlet weak var awayImage: UIImageView!
+    @IBOutlet weak var homeLabel: UILabel!
+    @IBOutlet weak var awayLabel: UILabel!
+    @IBOutlet weak var homeScore: UILabel!
+    @IBOutlet weak var awayScore: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

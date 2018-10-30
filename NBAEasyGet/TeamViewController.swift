@@ -64,7 +64,7 @@ class TeamViewController: UIViewController, UITableViewDataSource {
     
     func fectchTeams(){
         
-        let url = URL(string: "http://api.sportradar.us/nba/trial/v5/en/league/hierarchy.json?api_key=3ye63ptxw6j7xtfrwaf3jstb")!
+        let url = URL(string: "http://api.sportradar.us/nba/trial/v5/en/league/hierarchy.json?api_key=d8nn89vtd3qe7jkwvzftfjqa")!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
         let task = session.dataTask(with: request) { (data, response, error) in

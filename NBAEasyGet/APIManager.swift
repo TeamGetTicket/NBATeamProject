@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+class APIManager{
+    static let shared = APIManager()
+}
