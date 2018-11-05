@@ -28,7 +28,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="158.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="team25" translatesAutoresizingMaskIntoConstraints="NO" id="I5q-ed-lgk">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Warriors" translatesAutoresizingMaskIntoConstraints="NO" id="I5q-ed-lgk">
                                                     <rect key="frame" x="15" y="11" width="90" height="100"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
@@ -699,6 +699,5 @@
         <image name="Calender" width="30" height="30"/>
         <image name="Thunder" width="512" height="512"/>
         <image name="Warriors" width="512" height="512"/>
-        <image name="team25" width="512" height="512"/>
     </resources>
 </document>
