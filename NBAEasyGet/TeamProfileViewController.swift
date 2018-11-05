@@ -24,7 +24,7 @@ class TeamProfileViewController: UIViewController, UITableViewDataSource {
         if let team = team{
             self.navigationItem.title = team["name"] as? String
             let teamID = team["id"] as! String
-            let url = URL(string: "http://api.sportradar.us/nba/trial/v5/en/teams/\(teamID)/profile.json?api_key=3ye63ptxw6j7xtfrwaf3jstb")!
+            let url = URL(string: "http://api.sportradar.us/nba/trial/v5/en/teams/\(teamID)/profile.json?api_key=d8nn89vtd3qe7jkwvzftfjqa")!
             let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
             let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
             let task = session.dataTask(with: request) { (data, response, error) in
@@ -81,5 +81,17 @@ class TeamProfileViewController: UIViewController, UITableViewDataSource {
         // Pass the selected object to the new view controller.
     }
     */
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! UITableViewCell
+        if let indexPath = tableView.indexPath(for: cell){
+            let player = players[indexPath.row]
+            let playerviewViewController = segue.destination as! PlayerViewController
+            playerviewViewController.player = player as! [String : Any]
+            
+            
+        }
+        
+    }
+    
+    
 }

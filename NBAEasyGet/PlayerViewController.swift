@@ -25,21 +25,38 @@ class PlayerViewController: UIViewController {
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var collegeLabel: UILabel!
     @IBOutlet weak var draftDateLabel: UILabel!
-    @IBOutlet weak var aliasLabel: UILabel!
+    //@IBOutlet weak var aliasLabel: UILabel!
     @IBOutlet weak var debutYearLabel: UILabel!
     @IBOutlet weak var experienceYearLabel: UILabel!
     
-    //var player: Player?
+    var player: [String: Any]?
+    var playerID: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fectchPlayers()
+        
+        if let player = player{
+            
+            //self.navigationItem.title = player["name"] as? String
+            playerID = player["id"] as! String
+             //let url = URL(string: "http://api.sportradar.us/nba/trial/v5/en/players/\(playerID)/profile.json?api_key=d8nn89vtd3qe7jkwvzftfjqa")!
+            //print(playerID)
+            
+            fectchPlayers()
+        }
+        
+        
+        
         //fectchAlias()
 }
 
     func fectchPlayers(){
-    
-        let url = URL(string: "http://api.sportradar.us/nba/trial/v5/en/players/8ec91366-faea-4196-bbfd-b8fab7434795/profile.json?api_key=3ye63ptxw6j7xtfrwaf3jstb")!
+
+        //print(playerID)
+    let urlString = "http://api.sportradar.us/nba/trial/v5/en/players/" + self.playerID as! String + "/profile.json?api_key=d8nn89vtd3qe7jkwvzftfjqa"
+        //print(urlString)
+        let url = URL(string: urlString)!
+
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
         let task = session.dataTask(with: request) { (data, response, error) in
@@ -100,27 +117,12 @@ class PlayerViewController: UIViewController {
                 self.spgLabel.text = steal.stringValue
                 let block = average["blocks"] as! NSNumber
                 self.bpgLabel.text = block.stringValue
+                
+                let playerImageString = firstname + " " + lastname
+                self.profileImageView.image = UIImage(named: playerImageString)
             }
         }
         task.resume()
     }
-    
-    /* func fectchAlias(){
-        let url1 = URL(string: "http://api.sportradar.us/nba/trial/v5/en/teams/583ec825-fb46-11e1-82cb-f4ce4684ea4c/profile.json?api_key=3ye63ptxw6j7xtfrwaf3jstb")!
-        let request1 = URLRequest(url: url1, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
-        let session1 = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
-        let task1 = session1.dataTask(with: request1) { (data, response, error) in
-            // This will run when the network request returns
-            if let error1 = error{
-                print(error1.localizedDescription)
-            }else if let data1 = data {
-                let dataDictionary1 = try! JSONSerialization.jsonObject(with: data1, options:[]) as! [String: Any]
 
-                let alias = dataDictionary1["alias"] as! String
-                self.aliasLabel.text = alias
-            }
-            }
-            task1.resume()
-    }*/
-    
 }
