@@ -28,7 +28,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="158.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="team25" translatesAutoresizingMaskIntoConstraints="NO" id="I5q-ed-lgk">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Warriors" translatesAutoresizingMaskIntoConstraints="NO" id="I5q-ed-lgk">
                                                     <rect key="frame" x="15" y="11" width="90" height="100"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
@@ -409,20 +409,6 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sh7-Uq-mLf">
-                                                <rect key="frame" x="178" y="541" width="26" height="19"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w00-Eu-ldm">
-                                                <rect key="frame" x="231" y="541" width="121" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NBA DEBUT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4vD-TX-Paw">
                                                 <rect key="frame" x="8" y="577" width="94" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -530,7 +516,6 @@
                     <size key="freeformSize" width="375" height="730"/>
                     <connections>
                         <outlet property="ageLabel" destination="VDt-Kl-puC" id="dYG-7r-MNa"/>
-                        <outlet property="aliasLabel" destination="w00-Eu-ldm" id="4TP-Vy-a1x"/>
                         <outlet property="apgLabel" destination="Cmd-KE-hie" id="WPw-Rp-dvT"/>
                         <outlet property="birthbateLabel" destination="Nh9-fR-EIL" id="IlM-lC-2F1"/>
                         <outlet property="bpgLabel" destination="mSD-bQ-wQB" id="ydP-4c-tsl"/>
@@ -551,9 +536,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="djW-fq-weG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-
             <point key="canvasLocation" x="3812" y="131.33433283358323"/>
-
         </scene>
         <!--Home-->
         <scene sceneID="rac-ud-fNe">
@@ -712,10 +695,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Basketball" width="22.5" height="22.5"/>
-        <image name="Calender" width="22.5" height="22.5"/>
+        <image name="Basketball" width="30" height="30"/>
+        <image name="Calender" width="30" height="30"/>
         <image name="Thunder" width="512" height="512"/>
         <image name="Warriors" width="512" height="512"/>
-        <image name="team25" width="512" height="512"/>
     </resources>
 </document>
