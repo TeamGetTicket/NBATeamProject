@@ -14,7 +14,7 @@ class ScheduleViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     var games:[NSDictionary] = []
-    var gameInprogress:NSDictionary = [:]
+    var refreshControl:UIRefreshControl!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,14 +22,23 @@ class ScheduleViewController: UIViewController, UITableViewDataSource {
         
         tableView.rowHeight = 120
         
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshControlAction(_:)), for: UIControl.Event.valueChanged)
+        tableView.insertSubview(refreshControl, at: 0)
+        
         let date = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"
         dateFormatter.dateFormat = "EEEE, MMM dd"
         let currentDateString: String = dateFormatter.string(from: date)
         dateLabel.text = currentDateString
+        
         fetchSchedule()
 //        gameInprogress = featchInprogressGame(gameID: "afa8ab8c-22ad-409c-b406-a252440ff992")
+    }
+    
+    @objc func refreshControlAction(_ refreshControl: UIRefreshControl){
+        fetchSchedule()
     }
     
     func fetchSchedule(){
@@ -38,7 +47,7 @@ class ScheduleViewController: UIViewController, UITableViewDataSource {
         let year = caldendar.component(.year, from: date)
         let month = caldendar.component(.month, from: date)
         let day = caldendar.component(.day, from: date)
-        let url = URL(string: "http://api.sportradar.us/nba/trial/v5/en/games/\(year)/\(month)/\(day)/schedule.json?api_key=d8nn89vtd3qe7jkwvzftfjqa")!
+        let url = URL(string: "http://api.sportradar.us/nba/trial/v5/en/games/\(year)/\(month)/\(day)/schedule.json?api_key=ksujx6az77nsanjrpe2evucc")!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
         let task = session.dataTask(with: request) { (data, response, error) in
@@ -48,6 +57,7 @@ class ScheduleViewController: UIViewController, UITableViewDataSource {
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
                 self.games = dataDictionary["games"] as! [NSDictionary]
             }
+            self.refreshControl.endRefreshing()
             self.tableView.reloadData()
         }
         task.resume()
@@ -79,7 +89,7 @@ class ScheduleViewController: UIViewController, UITableViewDataSource {
             cell.homeScore.text = "\(game["home_points"]!)"
             cell.awayScore.text = "\(game["away_points"]!)"
             
-        }else if(status == "scheduled" || status == "inprogress"){
+        }else if(status == "scheduled"){
             
             let utc = game["scheduled"] as! String
             let separators = CharacterSet(charactersIn: "-T:+")
@@ -96,6 +106,10 @@ class ScheduleViewController: UIViewController, UITableViewDataSource {
             
             cell.homeScore.text = ""
             cell.awayScore.text = ""
+        } else if (status == "inprogress"){
+            cell.timeLabel.text = "In Progress"
+            cell.homeScore.text = ""
+            cell.awayScore.text = ""
         }
     
         cell.homeImage.image = homeImage
@@ -105,27 +119,11 @@ class ScheduleViewController: UIViewController, UITableViewDataSource {
         
         return cell
     }
-
-    func featchInprogressGame(gameID: String) -> NSDictionary{
-        let url = URL(string: "http://api.sportradar.us/nba/trial/v5/en/games/\(gameID)/boxscore.json?api_key=d8nn89vtd3qe7jkwvzftfjqa")!
-        let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
-        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
-        let task = session.dataTask(with: request) { (data, response, error) in
-            // This will run when the network request returns
-            if let error = error {
-                print(error.localizedDescription)
-            } else if let data = data {
-                let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! NSDictionary
-                self.gameInprogress = dataDictionary
-                
-                // TODO: Get the array of movies
-                // TODO: Store the movies in a property to use elsewhere
-                // TODO: Reload your table view data
-                
-            }
-        }
-        task.resume()
-        return self.gameInprogress
+    
+    @IBAction func dayBefore(_ sender: Any) {
+    }
+    
+    @IBAction func dayAfter(_ sender: Any) {
     }
     /*
     // MARK: - Navigation
@@ -136,5 +134,16 @@ class ScheduleViewController: UIViewController, UITableViewDataSource {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! UITableViewCell
+        if let indexPath = tableView.indexPath(for: cell){
+            let game = games[indexPath.row]
+            let gameDetailView = segue.destination as! GameDetailViewController
+            gameDetailView.game = game as? [String : Any]
+        }
+        
+    }
 
 }
