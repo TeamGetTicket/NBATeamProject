@@ -81,5 +81,17 @@ class TeamProfileViewController: UIViewController, UITableViewDataSource {
         // Pass the selected object to the new view controller.
     }
     */
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! UITableViewCell
+        if let indexPath = tableView.indexPath(for: cell){
+            let player = players[indexPath.row]
+            let playerviewViewController = segue.destination as! PlayerViewController
+            playerviewViewController.player = player as! [String : Any]
+            
+            
+        }
+        
+    }
+    
+    
 }

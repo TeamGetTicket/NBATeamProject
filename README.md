@@ -12,10 +12,10 @@ Time spent: **X** hours spent in total
 - [x] User can see the team icon for each team
 - [x] User can get Player list after tap the Team
 - [x] User can get Detail Player info after tap on PlayerCell in Player List
-- [ ] User sees an alert when there's a networking error
 
 The following stretch user stories are implemented:
 
+- [x] User can check the update game score in current season. 
 - [ ] User can search for a Team or Players
 - [ ] User can check the current season game schedule
 - [ ] User can access to a map that indicate every team's venue location
@@ -29,13 +29,14 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://github.com/TeamGetTicket/NBATeamProject/blob/master/src/NBAEasyGetDemo_03.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/TeamGetTicket/NBATeamProject/blob/master/src/NBAEasyGetDemo_04.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
 It took me a while to figure out how to get the json data from this api format.
+
 
 ## Credits
 

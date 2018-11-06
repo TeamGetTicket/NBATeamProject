@@ -5,8 +5,11 @@
 //  Created by Chengjiu Hong on 10/15/18.
 //  Copyright © 2018 PoHung Wang. All rights reserved.
 //
+
 import UIKit
+
 class PlayerViewController: UIViewController {
+
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var firstnameLabel: UILabel!
     @IBOutlet weak var lastnameLabel: UILabel!
@@ -37,7 +40,7 @@ class PlayerViewController: UIViewController {
             
             //self.navigationItem.title = player["name"] as? String
             playerID = player["id"] as! String
-            //let url = URL(string: "http://api.sportradar.us/nba/trial/v5/en/players/\(playerID)/profile.json?api_key=d8nn89vtd3qe7jkwvzftfjqa")!
+             //let url = URL(string: "http://api.sportradar.us/nba/trial/v5/en/players/\(playerID)/profile.json?api_key=d8nn89vtd3qe7jkwvzftfjqa")!
             //print(playerID)
             
             fectchPlayers()
@@ -46,10 +49,11 @@ class PlayerViewController: UIViewController {
         
         
         //fectchAlias()
-    }
+}
+
     func fectchPlayers(){
         //print(playerID)
-        let urlString = "http://api.sportradar.us/nba/trial/v5/en/players/" + self.playerID as! String + "/profile.json?api_key=d8nn89vtd3qe7jkwvzftfjqa"
+    let urlString = "http://api.sportradar.us/nba/trial/v5/en/players/" + self.playerID as! String + "/profile.json?api_key=d8nn89vtd3qe7jkwvzftfjqa"
         //print(urlString)
         let url = URL(string: urlString)!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
@@ -61,7 +65,7 @@ class PlayerViewController: UIViewController {
             }else if let data = data {
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
                 //print(dataDictionary)
-                // let id = dataDictionary["id"]
+               // let id = dataDictionary["id"]
                 //print(id)
                 let lastname = dataDictionary["last_name"] as! String
                 self.lastnameLabel.text = lastname
@@ -82,6 +86,7 @@ class PlayerViewController: UIViewController {
                 let currentYear = calendar.component(.year, from: date as Date)
                 let age = currentYear - year2! ?? 0
                 self.ageLabel.text = String (age)
+
                 let college = dataDictionary["college"] as! String
                 self.collegeLabel.text = college
                 let experience = dataDictionary["experience"] as! String
@@ -120,4 +125,5 @@ class PlayerViewController: UIViewController {
         }
         task.resume()
     }
+
 }
