@@ -5,11 +5,8 @@
 //  Created by Chengjiu Hong on 10/15/18.
 //  Copyright © 2018 PoHung Wang. All rights reserved.
 //
-
 import UIKit
-
 class PlayerViewController: UIViewController {
-
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var firstnameLabel: UILabel!
     @IBOutlet weak var lastnameLabel: UILabel!
@@ -25,9 +22,10 @@ class PlayerViewController: UIViewController {
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var collegeLabel: UILabel!
     @IBOutlet weak var draftDateLabel: UILabel!
-    //@IBOutlet weak var aliasLabel: UILabel!
     @IBOutlet weak var debutYearLabel: UILabel!
     @IBOutlet weak var experienceYearLabel: UILabel!
+    @IBOutlet weak var draftRound: UILabel!
+    
     
     var player: [String: Any]?
     var playerID: String!
@@ -39,7 +37,7 @@ class PlayerViewController: UIViewController {
             
             //self.navigationItem.title = player["name"] as? String
             playerID = player["id"] as! String
-             //let url = URL(string: "http://api.sportradar.us/nba/trial/v5/en/players/\(playerID)/profile.json?api_key=d8nn89vtd3qe7jkwvzftfjqa")!
+            //let url = URL(string: "http://api.sportradar.us/nba/trial/v5/en/players/\(playerID)/profile.json?api_key=d8nn89vtd3qe7jkwvzftfjqa")!
             //print(playerID)
             
             fectchPlayers()
@@ -48,15 +46,12 @@ class PlayerViewController: UIViewController {
         
         
         //fectchAlias()
-}
-
+    }
     func fectchPlayers(){
-
         //print(playerID)
-    let urlString = "http://api.sportradar.us/nba/trial/v5/en/players/" + self.playerID as! String + "/profile.json?api_key=d8nn89vtd3qe7jkwvzftfjqa"
+        let urlString = "http://api.sportradar.us/nba/trial/v5/en/players/" + self.playerID as! String + "/profile.json?api_key=d8nn89vtd3qe7jkwvzftfjqa"
         //print(urlString)
         let url = URL(string: urlString)!
-
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
         let task = session.dataTask(with: request) { (data, response, error) in
@@ -66,7 +61,7 @@ class PlayerViewController: UIViewController {
             }else if let data = data {
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
                 //print(dataDictionary)
-               // let id = dataDictionary["id"]
+                // let id = dataDictionary["id"]
                 //print(id)
                 let lastname = dataDictionary["last_name"] as! String
                 self.lastnameLabel.text = lastname
@@ -87,15 +82,16 @@ class PlayerViewController: UIViewController {
                 let currentYear = calendar.component(.year, from: date as Date)
                 let age = currentYear - year2! ?? 0
                 self.ageLabel.text = String (age)
-
                 let college = dataDictionary["college"] as! String
                 self.collegeLabel.text = college
                 let experience = dataDictionary["experience"] as! String
                 self.experienceYearLabel.text = experience
                 
                 let draft = dataDictionary["draft"] as! [String:Any]
-                let pick = draft["pick"] as! String
+                let pick = draft["pick", default: "No information"] as? String
                 self.draftDateLabel.text = pick
+                let round = draft["round", default: "No information"] as? String
+                self.draftRound.text = round
                 let debut = draft["year"] as! integer_t
                 self.debutYearLabel.text = String (debut)
                 
@@ -124,5 +120,4 @@ class PlayerViewController: UIViewController {
         }
         task.resume()
     }
-
 }
