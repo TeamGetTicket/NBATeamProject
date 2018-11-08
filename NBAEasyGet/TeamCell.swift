@@ -13,10 +13,8 @@ class TeamCell: UITableViewCell {
     
     @IBOutlet weak var teamNameLabel: UILabel!
     
-    @IBOutlet weak var teamAliasLabel: UILabel!
-    
-    @IBOutlet weak var teamVenueLabel: UILabel!
-    @IBOutlet weak var teamAddressLabel: UILabel!
+    @IBOutlet weak var winsLabel: UILabel!
+    @IBOutlet weak var lossesLabel: UILabel!
     
     @IBOutlet weak var teamImage: UIImageView!
     
