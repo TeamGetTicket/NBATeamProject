@@ -82,7 +82,7 @@ class PlayerViewController: UIViewController {
                 let currentYear = calendar.component(.year, from: date as Date)
                 let age = currentYear - year2! ?? 0
                 self.ageLabel.text = String (age)
-                let college = dataDictionary["college"] as! String
+                let college = dataDictionary["college", default: "No College Found"] as? String
                 self.collegeLabel.text = college
                 let experience = dataDictionary["experience"] as! String
                 self.experienceYearLabel.text = experience
