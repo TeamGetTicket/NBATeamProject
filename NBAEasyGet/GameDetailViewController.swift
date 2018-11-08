@@ -72,13 +72,29 @@ class GameDetailViewController: UIViewController {
 
                     for quarter in homeScoreDict{
                         if(quarter["number"]as! Int == 1){
-                            self.homeQ1.text = String(quarter["points"] as! Int)
+                            if(quarter["points"] as! Int != 0){
+                                self.homeQ1.text = String(quarter["points"] as! Int)
+                            }else{
+                                self.homeQ1.text = "0"
+                            }
                         }else if(quarter["number"]as! Int == 2){
-                            self.homeQ2.text = String(quarter["points"] as! Int)
+                            if(quarter["points"] as! Int != 0){
+                                self.homeQ2.text = String(quarter["points"] as! Int)
+                            }else{
+                                self.homeQ2.text = "0"
+                            }
                         }else if(quarter["number"]as! Int == 3){
-                            self.homeQ3.text = String(quarter["points"] as! Int)
+                            if(quarter["points"] as! Int != 0){
+                                self.homeQ3.text = String(quarter["points"] as! Int)
+                            }else{
+                                self.homeQ3.text = "0"
+                            }
                         }else if(quarter["number"]as! Int == 4){
-                            self.homeQ4.text = String(quarter["points"] as! Int)
+                            if(quarter["points"] as! Int != 0){
+                                self.homeQ4.text = String(quarter["points"] as! Int)
+                            }else{
+                                self.homeQ4.text = "0"
+                            }
                         }
                     }
                     
@@ -91,13 +107,30 @@ class GameDetailViewController: UIViewController {
                     
                     for quarter in awayScoreDict{
                         if(quarter["number"]as! Int == 1){
-                            self.awayQ1.text = String(quarter["points"] as! Int)
+                            if(quarter["points"] as! Int != 0){
+                                self.awayQ1.text = String(quarter["points"] as! Int)
+                            }else{
+                                self.awayQ1.text = "0"
+                            }
                         }else if(quarter["number"]as! Int == 2){
-                            self.awayQ2.text = String(quarter["points"] as! Int)
+                            if(quarter["points"] as! Int != 0){
+                                self.awayQ2.text = String(quarter["points"] as! Int)
+                            }else{
+                                self.awayQ2.text = "0"
+                            }
                         }else if(quarter["number"]as! Int == 3){
-                            self.awayQ3.text = String(quarter["points"] as! Int)
+                            if(quarter["points"] as! Int != 0){
+                                self.awayQ3.text = String(quarter["points"] as! Int)
+                            }else{
+                                self.awayQ3.text = "0"
+                            }
                         }else if(quarter["number"]as! Int == 4){
-                            self.awayQ4.text = String(quarter["points"] as! Int)
+                            if(quarter["points"] as! Int != 0){
+                                self.awayQ4.text = String(quarter["points"] as! Int)
+                            }else{
+                                self.awayQ4.text = "0"
+                            }
+                            
                         }
                     }
 

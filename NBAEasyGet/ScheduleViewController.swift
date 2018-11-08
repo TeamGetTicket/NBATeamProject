@@ -15,6 +15,12 @@ class ScheduleViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     var games:[NSDictionary] = []
     var refreshControl:UIRefreshControl!
+    var date = Date()
+    var caldendar = Calendar.current
+    var year:Int = 0
+    var month:Int = 0
+    var day:Int = 0
+    var dateFormatter = DateFormatter()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,28 +31,27 @@ class ScheduleViewController: UIViewController, UITableViewDataSource {
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refreshControlAction(_:)), for: UIControl.Event.valueChanged)
         tableView.insertSubview(refreshControl, at: 0)
+//
+//        dateFormatter.dateFormat = "dd-MM-yyyy"
+//        dateFormatter.dateFormat = "EEEE, MMM dd"
+//        let currentDateString: String = dateFormatter.string(from: date)
+
         
-        let date = Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy"
-        dateFormatter.dateFormat = "EEEE, MMM dd"
-        let currentDateString: String = dateFormatter.string(from: date)
-        dateLabel.text = currentDateString
         
-        fetchSchedule()
-//        gameInprogress = featchInprogressGame(gameID: "afa8ab8c-22ad-409c-b406-a252440ff992")
+         year = caldendar.component(.year, from: date)
+         month = caldendar.component(.month, from: date)
+         day = caldendar.component(.day, from: date)
+        
+         dateLabel.text = "\(month)/\(day)/\(year)"
+        
+        fetchSchedule(day: day,month: month,year: year)
     }
     
     @objc func refreshControlAction(_ refreshControl: UIRefreshControl){
-        fetchSchedule()
+        fetchSchedule(day: day,month: month,year: year)
     }
     
-    func fetchSchedule(){
-        let date = Date()
-        let caldendar = Calendar.current
-        let year = caldendar.component(.year, from: date)
-        let month = caldendar.component(.month, from: date)
-        let day = caldendar.component(.day, from: date)
+    func fetchSchedule(day: Int, month: Int, year: Int){
         let url = URL(string: "http://api.sportradar.us/nba/trial/v5/en/games/\(year)/\(month)/\(day)/schedule.json?api_key=ksujx6az77nsanjrpe2evucc")!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
@@ -84,7 +89,6 @@ class ScheduleViewController: UIViewController, UITableViewDataSource {
         
         let status = game["status"] as! String
         if(status == "closed" || status == "complete"){
-//          ||  status == "complete"
             cell.timeLabel.text = "Final"
             cell.homeScore.text = "\(game["home_points"]!)"
             cell.awayScore.text = "\(game["away_points"]!)"
@@ -121,9 +125,15 @@ class ScheduleViewController: UIViewController, UITableViewDataSource {
     }
     
     @IBAction func dayBefore(_ sender: Any) {
+        day -= 1
+        dateLabel.text = "\(month)/\(day)/\(year)"
+        fetchSchedule(day: day,month: month,year: year)
     }
     
     @IBAction func dayAfter(_ sender: Any) {
+        day = day + 1
+        dateLabel.text = "\(month)/\(day)/\(year)"
+        fetchSchedule(day: day,month: month,year: year)
     }
     /*
     // MARK: - Navigation
