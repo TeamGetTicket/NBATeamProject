@@ -32,29 +32,38 @@ class TeamViewController: UIViewController, UITableViewDataSource {
         
         let team = teams[indexPath.row]
         //print(team)
-        let teamName = team["name"] as! String
+        let name = team["name"] as! String
+        let market = team["market"] as! String
+        let teamName = market + " " + name
+        
+        let wins = team["wins"] as! Int
+        let losses = team["losses"] as! Int
+        
+        cell.teamNameLabel.text = teamName
+        cell.winsLabel.text = String(wins)
+        cell.lossesLabel.text = String(losses)
         //print(teamName)
-        let teamAlias = team["alias"] as! String
-        let venue = team["venue"] as! [String:Any]
-        //print(venue)
-        let venueName = venue["name"] as! String
-        //print(venueName)
-        let address:String = venue["address"] as! String
-        let city:String = venue["city"] as! String
-        let state:String = venue["state"] as! String
-        let zip:String = venue["zip"] as! String
-        
-        let venueAddress:String = address + ", " + city + ", " + state + ", " + zip
-        
+//        let teamAlias = team["alias"] as! String
+//        let venue = team["venue"] as! [String:Any]
+//        //print(venue)
+//        let venueName = venue["name"] as! String
+//        //print(venueName)
+//        let address:String = venue["address"] as! String
+//        let city:String = venue["city"] as! String
+//        let state:String = venue["state"] as! String
+//        let zip:String = venue["zip"] as! String
+//
+//        let venueAddress:String = address + ", " + city + ", " + state + ", " + zip
+//
         //print(venueAddress)
         //print(city)
-        cell.teamNameLabel.text = teamName
-        cell.teamAliasLabel.text = teamAlias
-        cell.teamVenueLabel.text = venueName
-        cell.teamAddressLabel.text = venueAddress
-        
+//        cell.teamNameLabel.text = teamName
+//        cell.teamAliasLabel.text = teamAlias
+//        cell.teamVenueLabel.text = venueName
+//        cell.teamAddressLabel.text = venueAddress
+//
 
-        let teamImage = UIImage(named: teamName)
+        let teamImage = UIImage(named: name)
 
         cell.teamImage.image = teamImage
         
@@ -64,7 +73,7 @@ class TeamViewController: UIViewController, UITableViewDataSource {
     
     func fectchTeams(){
         
-        let url = URL(string: "http://api.sportradar.us/nba/trial/v5/en/league/hierarchy.json?api_key=d8nn89vtd3qe7jkwvzftfjqa")!
+        let url = URL(string: "http://api.sportradar.us/nba/trial/v5/en/seasons/2018/REG/standings.json?api_key=ksujx6az77nsanjrpe2evucc")!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
         let task = session.dataTask(with: request) { (data, response, error) in
