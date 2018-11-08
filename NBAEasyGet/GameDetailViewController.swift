@@ -20,6 +20,17 @@ class GameDetailViewController: UIViewController {
     @IBOutlet weak var awayScore: UILabel!
     
     
+    @IBOutlet weak var homeQ1: UILabel!
+    @IBOutlet weak var homeQ2: UILabel!
+    @IBOutlet weak var homeQ3: UILabel!
+    @IBOutlet weak var homeQ4: UILabel!
+    @IBOutlet weak var awayQ1: UILabel!
+    @IBOutlet weak var awayQ2: UILabel!
+    @IBOutlet weak var awayQ3: UILabel!
+    @IBOutlet weak var awayQ4: UILabel!
+    @IBOutlet weak var homeQScore: UILabel!
+    @IBOutlet weak var awayQScore: UILabel!
+    
     var game: [String:Any]?
     
     override func viewDidLoad() {
@@ -42,6 +53,7 @@ class GameDetailViewController: UIViewController {
                         let quarter = data["quarter"] as! Int
                         if(quarter > 4){
                             self.quarter.text = "OT"
+
                         }
                     }else{
                         let clock = data["clock"] as! String
@@ -52,14 +64,42 @@ class GameDetailViewController: UIViewController {
                     
                     let home = data["home"] as! NSDictionary
                     self.homeName.text = home["name"] as? String
+                    self.homeQScore.text = home["name"] as? String
                     self.homeScore.text = String(home["points"] as! Int)
                     let homeImageName = UIImage(named: home["name"] as! String)
                     self.homeImage.image = homeImageName
-                    
+                    let homeScoreDict = home["scoring"] as! [NSDictionary]
+
+                    for quarter in homeScoreDict{
+                        if(quarter["number"]as! Int == 1){
+                            self.homeQ1.text = String(quarter["points"] as! Int)
+                        }else if(quarter["number"]as! Int == 2){
+                            self.homeQ2.text = String(quarter["points"] as! Int)
+                        }else if(quarter["number"]as! Int == 3){
+                            self.homeQ3.text = String(quarter["points"] as! Int)
+                        }else if(quarter["number"]as! Int == 4){
+                            self.homeQ4.text = String(quarter["points"] as! Int)
+                        }
+                    }
                     
                     let away = data["away"] as! NSDictionary
                     self.awayName.text = away["name"] as? String
+                    self.awayQScore.text = away["name"] as? String
                     self.awayScore.text = String(away["points"] as! Int)
+                    self.awayQScore.text = away["name"] as? String
+                    let awayScoreDict = away["scoring"] as! [NSDictionary]
+                    
+                    for quarter in awayScoreDict{
+                        if(quarter["number"]as! Int == 1){
+                            self.awayQ1.text = String(quarter["points"] as! Int)
+                        }else if(quarter["number"]as! Int == 2){
+                            self.awayQ2.text = String(quarter["points"] as! Int)
+                        }else if(quarter["number"]as! Int == 3){
+                            self.awayQ3.text = String(quarter["points"] as! Int)
+                        }else if(quarter["number"]as! Int == 4){
+                            self.awayQ4.text = String(quarter["points"] as! Int)
+                        }
+                    }
 
                     let awayImageName = UIImage(named: away["name"] as! String)
                     self.awayImage.image = awayImageName
