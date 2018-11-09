@@ -86,8 +86,7 @@ class PlayerViewController: UIViewController {
                 self.ageLabel.text = String (age)
                 let birthPlace = dataDictionary["birth_place"] as! String
                 let city = birthPlace.components(separatedBy: ",")
-                
-//                let college = dataDictionary["birth_place", default: "Not Found"] as? String
+
                 self.collegeLabel.text = city[0]
                 let experience = dataDictionary["experience"] as! String
                 self.experienceYearLabel.text = experience

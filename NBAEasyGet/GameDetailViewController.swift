@@ -18,6 +18,8 @@ class GameDetailViewController: UIViewController {
     @IBOutlet weak var clock: UILabel!
     @IBOutlet weak var homeScore: UILabel!
     @IBOutlet weak var awayScore: UILabel!
+    @IBOutlet weak var homeTotalScore: UILabel!
+    @IBOutlet weak var awayTotalScore: UILabel!
     
     
     @IBOutlet weak var homeQ1: UILabel!
@@ -30,6 +32,16 @@ class GameDetailViewController: UIViewController {
     @IBOutlet weak var awayQ4: UILabel!
     @IBOutlet weak var homeQScore: UILabel!
     @IBOutlet weak var awayQScore: UILabel!
+    
+    @IBOutlet weak var homeLeaderImage: UIImageView!
+    @IBOutlet weak var homeLeaderName: UILabel!
+    @IBOutlet weak var homeLeaderScore: UILabel!
+    
+    @IBOutlet weak var awayLeaderScore: UILabel!
+    @IBOutlet weak var awayLeaderImage: UIImageView!
+    @IBOutlet weak var awayLeaderName: UILabel!
+    
+    
     
     var game: [String:Any]?
     
@@ -63,9 +75,19 @@ class GameDetailViewController: UIViewController {
                     }
                     
                     let home = data["home"] as! NSDictionary
+                    let homeLeadDict = home["leaders"] as! NSDictionary
+                    let homeLeadPointDict = homeLeadDict["points"] as! [NSDictionary]
+                    let pointDict = homeLeadPointDict[0]
+                    let homeStat = pointDict["statistics"] as! NSDictionary
+                    self.homeLeaderName.text = pointDict["full_name"] as? String
+                    self.homeLeaderScore.text = String(homeStat["points"] as! Int)
+                    let homeLeaderImageName = UIImage(named: pointDict["full_name"] as! String)
+                    self.homeLeaderImage.image = homeLeaderImageName
+                    
                     self.homeName.text = home["name"] as? String
                     self.homeQScore.text = home["name"] as? String
                     self.homeScore.text = String(home["points"] as! Int)
+                    self.homeTotalScore.text = String(home["points"] as! Int)
                     let homeImageName = UIImage(named: home["name"] as! String)
                     self.homeImage.image = homeImageName
                     let homeScoreDict = home["scoring"] as! [NSDictionary]
@@ -99,9 +121,20 @@ class GameDetailViewController: UIViewController {
                     }
                     
                     let away = data["away"] as! NSDictionary
+
+                    let awayLeadDict = away["leaders"] as! NSDictionary
+                    let awayLeadPointDict = awayLeadDict["points"] as! [NSDictionary]
+                    let awayPointDict = awayLeadPointDict[0]
+                    let awayStat = awayPointDict["statistics"] as! NSDictionary
+                    self.awayLeaderName.text = awayPointDict["full_name"] as? String
+                    self.awayLeaderScore.text = String(awayStat["points"] as! Int)
+                    let awayLeaderImageName = UIImage(named: awayPointDict["full_name"] as! String)
+                    self.awayLeaderImage.image = awayLeaderImageName
+                    
                     self.awayName.text = away["name"] as? String
                     self.awayQScore.text = away["name"] as? String
                     self.awayScore.text = String(away["points"] as! Int)
+                    self.awayTotalScore.text = String(away["points"] as! Int)
                     self.awayQScore.text = away["name"] as? String
                     let awayScoreDict = away["scoring"] as! [NSDictionary]
                     
@@ -136,6 +169,8 @@ class GameDetailViewController: UIViewController {
 
                     let awayImageName = UIImage(named: away["name"] as! String)
                     self.awayImage.image = awayImageName
+                    
+                    
 
                     
                 }

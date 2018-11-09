@@ -31,12 +31,6 @@ class ScheduleViewController: UIViewController, UITableViewDataSource {
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refreshControlAction(_:)), for: UIControl.Event.valueChanged)
         tableView.insertSubview(refreshControl, at: 0)
-//
-//        dateFormatter.dateFormat = "dd-MM-yyyy"
-//        dateFormatter.dateFormat = "EEEE, MMM dd"
-//        let currentDateString: String = dateFormatter.string(from: date)
-
-        
         
          year = caldendar.component(.year, from: date)
          month = caldendar.component(.month, from: date)
