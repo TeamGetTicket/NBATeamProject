@@ -30,8 +30,8 @@ class GameDetailViewController: UIViewController {
     @IBOutlet weak var awayQ2: UILabel!
     @IBOutlet weak var awayQ3: UILabel!
     @IBOutlet weak var awayQ4: UILabel!
-    @IBOutlet weak var homeQScore: UILabel!
-    @IBOutlet weak var awayQScore: UILabel!
+    @IBOutlet weak var homeTeamScoreImage: UIImageView!
+    @IBOutlet weak var awayTeamScoreImage: UIImageView!
     
     @IBOutlet weak var homeLeaderImage: UIImageView!
     @IBOutlet weak var homeLeaderName: UILabel!
@@ -85,11 +85,11 @@ class GameDetailViewController: UIViewController {
                     self.homeLeaderImage.image = homeLeaderImageName
                     
                     self.homeName.text = home["name"] as? String
-                    self.homeQScore.text = home["name"] as? String
                     self.homeScore.text = String(home["points"] as! Int)
                     self.homeTotalScore.text = String(home["points"] as! Int)
                     let homeImageName = UIImage(named: home["name"] as! String)
                     self.homeImage.image = homeImageName
+                    self.homeTeamScoreImage.image = homeImageName
                     let homeScoreDict = home["scoring"] as! [NSDictionary]
 
                     for quarter in homeScoreDict{
@@ -132,10 +132,8 @@ class GameDetailViewController: UIViewController {
                     self.awayLeaderImage.image = awayLeaderImageName
                     
                     self.awayName.text = away["name"] as? String
-                    self.awayQScore.text = away["name"] as? String
                     self.awayScore.text = String(away["points"] as! Int)
                     self.awayTotalScore.text = String(away["points"] as! Int)
-                    self.awayQScore.text = away["name"] as? String
                     let awayScoreDict = away["scoring"] as! [NSDictionary]
                     
                     for quarter in awayScoreDict{
@@ -169,10 +167,7 @@ class GameDetailViewController: UIViewController {
 
                     let awayImageName = UIImage(named: away["name"] as! String)
                     self.awayImage.image = awayImageName
-                    
-                    
-
-                    
+                    self.awayTeamScoreImage.image = awayImageName
                 }
             }
             task.resume()
