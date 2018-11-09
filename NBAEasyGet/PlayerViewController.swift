@@ -36,7 +36,7 @@ class PlayerViewController: UIViewController {
         if let player = player{
             
             //self.navigationItem.title = player["name"] as? String
-            playerID = player["id"] as! String
+            playerID = player["id"] as? String
             //let url = URL(string: "http://api.sportradar.us/nba/trial/v5/en/players/\(playerID)/profile.json?api_key=d8nn89vtd3qe7jkwvzftfjqa")!
             //print(playerID)
             
@@ -49,7 +49,7 @@ class PlayerViewController: UIViewController {
     }
     func fectchPlayers(){
         //print(playerID)
-        let urlString = "http://api.sportradar.us/nba/trial/v5/en/players/" + self.playerID as! String + "/profile.json?api_key=d8nn89vtd3qe7jkwvzftfjqa"
+        let urlString = "http://api.sportradar.us/nba/trial/v5/en/players/" + self.playerID + "/profile.json?api_key=d8nn89vtd3qe7jkwvzftfjqa"
         //print(urlString)
         let url = URL(string: urlString)!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
@@ -68,9 +68,11 @@ class PlayerViewController: UIViewController {
                 let firstname = dataDictionary["first_name"] as! String
                 self.firstnameLabel.text = firstname
                 let height = dataDictionary["height"] as! integer_t
-                self.heightLabel.text = String (height)
+                let feet = height/12
+                let remainder = feet%12
+                self.heightLabel.text = "\(feet) ft \(remainder) in"
                 let weight = dataDictionary["weight"] as! integer_t
-                self.weightLabel.text = String (weight)
+                self.weightLabel.text = "\(weight) lbs"
                 let birthday = dataDictionary["birthdate"] as! String
                 self.birthbateLabel.text = birthday
                 
@@ -80,10 +82,12 @@ class PlayerViewController: UIViewController {
                 let date = NSDate()
                 let calendar = NSCalendar.current
                 let currentYear = calendar.component(.year, from: date as Date)
-                let age = currentYear - year2! ?? 0
+                let age = currentYear - year2! 
                 self.ageLabel.text = String (age)
-                let college = dataDictionary["college", default: "No College Found"] as? String
-                self.collegeLabel.text = college
+                let birthPlace = dataDictionary["birth_place"] as! String
+                let city = birthPlace.components(separatedBy: ",")
+
+                self.collegeLabel.text = city[0]
                 let experience = dataDictionary["experience"] as! String
                 self.experienceYearLabel.text = experience
                 
@@ -114,8 +118,7 @@ class PlayerViewController: UIViewController {
                 let block = average["blocks"] as! NSNumber
                 self.bpgLabel.text = block.stringValue
                 
-                let playerImageString = firstname + " " + lastname
-                self.profileImageView.image = UIImage(named: playerImageString)
+                self.profileImageView.image = UIImage(named: dataDictionary["full_name"] as! String)
             }
         }
         task.resume()
