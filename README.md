@@ -15,6 +15,7 @@ Time spent: **30** hours spent in total
 
 The following stretch user stories are implemented:
 
+- [x] Users can search team by name on search bar.
 - [x] Users can see the update game score in schedule tab. 
 - [x] In schedule tab, users can see the detail game score after click the cell. 
 - [x] In schedule tab, users can see the point leader info in detail game score view. 
@@ -29,7 +30,8 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://github.com/TeamGetTicket/NBATeamProject/blob/master/src/NBAEasyGetDemo_05.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/TeamGetTicket/NBATeamProject/blob/master/src/NBAEasyGetDemo_05.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' /><img src='https://github.com/TeamGetTicket/NBATeamProject/blob/master/src/NBAEasyGetDemo_06.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
