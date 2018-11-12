@@ -11,9 +11,11 @@ import UIKit
 class TeamViewController: UIViewController, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var teams:[[String:Any]] = []
-    
+    var searchTeams:[[String:Any]] = []
+    var searching = false
 
 
     override func viewDidLoad() {
@@ -24,14 +26,23 @@ class TeamViewController: UIViewController, UITableViewDataSource {
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return teams.count
+        if searching{
+            return searchTeams.count
+        }else{
+            return teams.count
+        }
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "TeamCell", for: indexPath) as! TeamCell
         
-        let team = teams[indexPath.row]
-        //print(team)
+        var team:[String:Any]=[:]
+        if searching{
+            team = searchTeams[indexPath.row]
+        }else{
+            team = teams[indexPath.row]
+        }
+        
         let name = team["name"] as! String
         let market = team["market"] as! String
         let teamName = market + " " + name
@@ -131,4 +142,28 @@ class TeamViewController: UIViewController, UITableViewDataSource {
 
     }
 
+}
+
+extension TeamViewController: UISearchBarDelegate {
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        searching = false
+        tableView.reloadData()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchTeams = searchText.isEmpty ? teams: teams.filter({(team: [String:Any]) -> Bool in
+            // If team name matches the searchText, return true to include it
+            
+            return (team["name"] as! String).range(of: searchText, options: .caseInsensitive) != nil
+            
+        })
+        
+        searching = true
+        tableView.reloadData()
+    }
+    
+    
+    
 }
