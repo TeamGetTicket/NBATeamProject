@@ -2,7 +2,7 @@
 
 **NBAEasyGet** is a NBA score tracking app, it also provides user the NBA team and players' information
 
-Time spent: **X** hours spent in total
+Time spent: **30** hours spent in total
 
 ## User Stories
 
@@ -15,10 +15,10 @@ Time spent: **X** hours spent in total
 
 The following stretch user stories are implemented:
 
-- [x] User can check the update game score in current season. 
-- [ ] User can search for a Team or Players
-- [ ] User can check the current season game schedule
-- [ ] User can access to a map that indicate every team's venue location
+- [x] Users can see the update game score in schedule tab. 
+- [x] In schedule tab, users can see the detail game score after click the cell. 
+- [x] In schedule tab, users can see the point leader info in detail game score view. 
+- [x] In schedule tab, users can shift to previous days from current date.
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
@@ -29,7 +29,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://github.com/TeamGetTicket/NBATeamProject/blob/master/src/NBAEasyGetDemo_04.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/TeamGetTicket/NBATeamProject/blob/master/src/NBAEasyGetDemo_05.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
